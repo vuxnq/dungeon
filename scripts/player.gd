@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var acceleration := 2000
+var acceleration := 4000
 var friction := 4000
 
 var velocity := Vector2.ZERO
@@ -34,7 +34,6 @@ func movement(delta):
 	
 	if input_vector != Vector2.ZERO:
 		animation_tree.get("parameters/playback").travel("walk")
-		animation_tree.set("parameters/idle/blend_position", input_vector.x)
 		animation_tree.set("parameters/walk/blend_position", input_vector)
 	else:
 		animation_tree.get("parameters/playback").travel("idle")
