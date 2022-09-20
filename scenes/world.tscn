@@ -3,7 +3,7 @@
 [ext_resource path="res://scenes/world/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/world/tree.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/grass.png" type="Texture" id=3]
-[ext_resource path="res://scenes/world/dungeon-entrance.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/world/dungeon_entrance.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/world/shop.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/world/house.tscn" type="PackedScene" id=6]
 
@@ -46,7 +46,7 @@ tile_data = PoolIntArray( -1179650, 0, 0, -1179649, 0, 0, -1245184, 0, 0, -12451
 position = Vector2( -302, -172 )
 
 [node name="Tree" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( -208, 40 )
+position = Vector2( -131, 146 )
 
 [node name="Dungeon" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 98, -185 )

@@ -11,6 +11,7 @@ onready var animation_tree := $AnimationTree
 
 func _ready():
 	animation_tree.active = true
+	global_position = Global.player_position
 
 func movement(delta):
 	input_vector = Vector2.ZERO
