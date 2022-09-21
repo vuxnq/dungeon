@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://scripts/inventory/item.gd" type="Script" id=1]
+[ext_resource path="res://assets/gui/inventory/pickaxe.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+name = "Pickaxe"
+texture = ExtResource( 2 )
+amount = 1
+equipment = true
