@@ -7,6 +7,9 @@ var velocity := Vector2.ZERO
 var speed = 500
 var input_vector
 
+var inventory_opened = false
+
+onready var inventory_path = preload("res://scenes/gui/inventory/inventory.tscn")
 onready var animation_tree := $AnimationTree
 
 func _ready():
@@ -43,3 +46,13 @@ func movement(delta):
 
 func _physics_process(delta):
 	movement(delta)
+	if Input.is_action_just_pressed("inventory"):
+		inventory()
+
+func inventory():
+	if inventory_opened:
+		remove_child(get_node("Inventory"))
+		inventory_opened = false
+	else:
+		add_child(inventory_path.instance())
+		inventory_opened = true
