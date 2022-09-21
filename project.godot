@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://scripts/global.gd"
+Hud="*res://scenes/gui/hud.tscn"
 
 [display]
 
