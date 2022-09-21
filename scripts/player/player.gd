@@ -9,6 +9,8 @@ var input_vector
 
 onready var animation_tree := $AnimationTree
 
+var opened_inventory = false
+
 func _ready():
 	animation_tree.active = true
 	global_position = Global.player_position
@@ -41,5 +43,18 @@ func movement(delta):
 	
 	velocity = move_and_slide(velocity)
 
+func Inventory():
+	opened_inventory = !opened_inventory
+
+	var inventory_node = preload("res://scenes/gui/inventory/inventory.tscn").instance()
+	if opened_inventory:
+		self.add_child(inventory_node)
+	else:
+		self.remove_child(get_node("Inventory"))
+
 func _physics_process(delta):
 	movement(delta)
+
+func _process(delta):
+	if Input.is_action_just_pressed("inventory_open"):
+		Inventory()
