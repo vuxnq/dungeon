@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/dungeon/dungeon_tilemap.tres" type="TileSet" id=1]
+[ext_resource path="res://scenes/dungeon/cave_generator.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/world/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/dungeon_background.png" type="Texture" id=4]
+[ext_resource path="res://scripts/dungeon.gd" type="Script" id=5]
+[ext_resource path="res://assets/light.png" type="Texture" id=6]
+
+[node name="Dungeon" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0, 0, 0, 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 1920, 1080 )
+texture = ExtResource( 4 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( -262142, 0, 196608, -262141, 0, 196610, -131074, 0, 0, -131073, 0, 1, -196608, 0, 1, -196607, 0, 2, -65539, 0, 0, -65538, 0, 131078, -65537, 0, 65537, -131072, 0, 65537, -131071, 0, 131077, -131070, 0, 2, -3, 0, 65536, -2, 0, 65537, -1, 0, 65537, -65536, 0, 65537, -65535, 0, 65537, -65534, 0, 65538, 65533, 0, 65536, 65534, 0, 65537, 65535, 0, 65537, 0, 0, 65537, 1, 0, 65537, 2, 0, 65538, 131069, 0, 131072, 131070, 0, 65542, 131071, 0, 65537, 65536, 0, 65537, 65537, 0, 65541, 65538, 0, 131074, 196606, 0, 131072, 196607, 0, 131073, 131072, 0, 131073, 131073, 0, 131074 )
+
+[node name="CaveGenerator" parent="TileMap" instance=ExtResource( 2 )]
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+
+[node name="Light2D" type="Light2D" parent="Player"]
+texture = ExtResource( 6 )
+texture_scale = 2.0
+energy = 0.75
+shadow_enabled = true
+shadow_gradient_length = 3.0
+shadow_filter = 2
+shadow_filter_smooth = 50.0
+
+[node name="Light2D2" type="Light2D" parent="Player"]
+texture = ExtResource( 6 )
+texture_scale = 2.0
+energy = 0.5
+shadow_gradient_length = 5.0
+shadow_filter = 2
+shadow_filter_smooth = 50.0

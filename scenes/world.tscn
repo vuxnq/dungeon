@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/world/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/world/tree.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/world/shop.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/world/house.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scripts/inventory/item_dropper.gd" type="Script" id=7]
+[ext_resource path="res://scenes/dungeon/dungeon.tscn" type="PackedScene" id=8]
 
 [sub_resource type="TileSet" id=1]
 0/name = "grass.png 0"
@@ -54,6 +55,7 @@ position = Vector2( -131, 146 )
 
 [node name="Dungeon" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 98, -185 )
+interior = ExtResource( 8 )
 
 [node name="Shop" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 502, -11 )
