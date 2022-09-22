@@ -3,7 +3,7 @@ var item_drop = preload("res://scenes/gui/inventory/item_drop.tscn")
 var drop = preload("res://resources/diamond.tres") # actual drop (like diamonds)
 
 
-func _on_DropArea_body_entered(body):
+func _on_DropArea_body_entered(_body):
 	drop_item(drop)
 
 func drop_item(drop):

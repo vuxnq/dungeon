@@ -58,7 +58,7 @@ var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
 func random_string():
 	var word: String
 	var n_char = len(chars)
-	for i in range(10):
+	for _i in range(10):
 		word += chars[randi()% n_char]
 	return word
 

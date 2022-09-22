@@ -9,6 +9,6 @@ func _ready():
 	sprite.texture = item.texture
 
 
-func _on_ItemDrop_body_entered(body):
+func _on_ItemDrop_body_entered(_body):
 	if inventory.add_item(item):
 		queue_free()

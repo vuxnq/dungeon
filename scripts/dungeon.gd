@@ -5,7 +5,7 @@ onready var player = $Player
 func _ready():
 	player.global_position = Vector2.ZERO
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		exit()
 

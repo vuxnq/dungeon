@@ -32,6 +32,7 @@ func movement(delta):
 	
 	if input_vector != Vector2.ZERO:
 		velocity = velocity.move_toward(input_vector * speed, acceleration * delta)
+		Global.player_energy -= 1 * delta
 		
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
@@ -59,7 +60,7 @@ func inventory():
 		inventory_opened = true
 
 func zoom():
-	if Input.is_action_just_released("ui_mouse_wheel_down") and $Camera2D.zoom < Vector2(5, 5):
+	if Input.is_action_just_released("ui_mouse_wheel_down") and $Camera2D.zoom < Vector2(2, 2):
 		$Camera2D.zoom += Vector2(0.1, 0.1)
 	elif Input.is_action_just_released("ui_mouse_wheel_up") and $Camera2D.zoom > Vector2(0.1, 0.1):
 		$Camera2D.zoom -= Vector2(0.1, 0.1)
