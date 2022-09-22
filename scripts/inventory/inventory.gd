@@ -36,3 +36,21 @@ func make_items_unique():
 		else:
 			unique_items.append(null)
 	items = unique_items
+
+func add_item(item):
+	var item_added = false
+	for i in range(len(items)):
+		if items[i] != null:
+			if items[i].name == item.name:
+				items[i].amount += 1
+				item_added = true
+				emit_signal("items_changed", [i])
+				return true
+				break
+	for i in range(len(items)):
+		if items[i] == null:
+			set_item(i, item)
+			item_added = true
+			emit_signal("items_changed", [i])
+			return true
+			break

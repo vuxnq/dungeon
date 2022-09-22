@@ -9,7 +9,7 @@
 [sub_resource type="DynamicFont" id=1]
 size = 32
 outline_size = 4
-outline_color = Color( 0, 0, 0, 1 )
+outline_color = Color( 0.0745098, 0.0745098, 0.0745098, 1 )
 font_data = ExtResource( 5 )
 
 [node name="Hud" type="CanvasLayer"]
@@ -95,9 +95,6 @@ anchor_bottom = 0.5
 margin_top = -32.0
 margin_right = 307.0
 margin_bottom = 32.0
-custom_colors/font_color_shadow = Color( 0.352941, 0.772549, 0.309804, 1 )
-custom_constants/shadow_offset_x = 0
-custom_constants/shadow_offset_y = 3
 custom_fonts/font = SubResource( 1 )
 text = "100"
 align = 2
