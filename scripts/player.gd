@@ -48,6 +48,7 @@ func _physics_process(delta):
 	movement(delta)
 	if Input.is_action_just_pressed("inventory"):
 		inventory()
+	zoom()
 
 func inventory():
 	if inventory_opened:
@@ -56,3 +57,9 @@ func inventory():
 	else:
 		add_child(inventory_path.instance())
 		inventory_opened = true
+
+func zoom():
+	if Input.is_action_just_released("ui_mouse_wheel_down") and $Camera2D.zoom < Vector2(5, 5):
+		$Camera2D.zoom += Vector2(0.1, 0.1)
+	elif Input.is_action_just_released("ui_mouse_wheel_up") and $Camera2D.zoom > Vector2(0.1, 0.1):
+		$Camera2D.zoom -= Vector2(0.1, 0.1)

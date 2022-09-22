@@ -373,5 +373,6 @@ parameters/playback = SubResource( 3 )
 parameters/walk/blend_position = 0.366617
 
 [node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 0, -32 )
 current = true
 smoothing_enabled = true
