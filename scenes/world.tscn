@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/world/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/world/tree.tscn" type="PackedScene" id=2]
@@ -9,24 +9,6 @@
 [ext_resource path="res://scripts/inventory/item_dropper.gd" type="Script" id=7]
 [ext_resource path="res://scenes/dungeon/dungeon.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/dirtpath_tileset.png" type="Texture" id=9]
-[ext_resource path="res://scripts/daynight.gd" type="Script" id=10]
-
-[sub_resource type="Animation" id=4]
-resource_name = "Day&Night"
-length = 24.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Day&Night:color")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 6, 9, 12, 18, 21.1, 24 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0.968627, 0.654902, 0.905882, 1 ), Color( 0.286275, 0.231373, 0.568627, 1 ), Color( 0.286275, 0.231373, 0.568627, 1 ), Color( 1, 0.737255, 0.607843, 1 ), Color( 1, 1, 1, 1 ) ]
-}
 
 [sub_resource type="TileSet" id=1]
 0/name = "grass.png 0"
@@ -80,13 +62,6 @@ tracks/0/keys = {
 radius = 128.0
 
 [node name="World" type="Node2D"]
-
-[node name="Day&Night" type="CanvasModulate" parent="."]
-script = ExtResource( 10 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Day&Night"]
-root_node = NodePath("../..")
-anims/Day&Night = SubResource( 4 )
 
 [node name="Grass" type="TileMap" parent="."]
 tile_set = SubResource( 1 )

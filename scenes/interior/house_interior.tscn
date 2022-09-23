@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/house_interior.gd" type="Script" id=1]
 [ext_resource path="res://scenes/world/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/house_interior.png" type="Texture" id=3]
+[ext_resource path="res://scenes/interior/house_bed.tscn" type="PackedScene" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
@@ -117,7 +118,12 @@ cell_size = Vector2( 128, 128 )
 format = 1
 tile_data = PoolIntArray( -327684, 1, 65537, -327683, 1, 1, -327682, 1, 1, -327681, 1, 1, -393216, 1, 1, -393215, 1, 1, -393214, 1, 1, -393213, 536870913, 65537, -262148, 1, 65536, -262147, 1, 0, -262146, 1, 0, -262145, 1, 0, -327680, 1, 0, -327679, 1, 0, -327678, 1, 0, -327677, 536870913, 65536, -196612, 1, 65536, -196611, 0, 0, -196610, 0, 1, -196609, 0, 1, -262144, 0, 1, -262143, 0, 1, -262142, 0, 2, -262141, 536870913, 65536, -131076, 1, 65536, -131075, 0, 65536, -131074, 0, 65537, -131073, 0, 65537, -196608, 0, 65537, -196607, 0, 65537, -196606, 0, 65538, -196605, 536870913, 65536, -65540, 1, 65536, -65539, 0, 65536, -65538, 0, 65537, -65537, 0, 65537, -131072, 0, 65537, -131071, 0, 65537, -131070, 0, 65538, -131069, 536870913, 65536, -4, 1, 65536, -3, 0, 65536, -2, 0, 65537, -1, 0, 65537, -65536, 0, 65537, -65535, 0, 65537, -65534, 0, 65538, -65533, 536870913, 65536, 65532, 1, 65536, 65533, 0, 131072, 65534, 0, 131073, 65535, 0, 131073, 0, 0, 131073, 1, 0, 131073, 2, 0, 131074, 3, 536870913, 65536, 131068, 1, 131072, 131069, -1073741823, 65536, 131070, -1073741823, 65536, 131071, 536870913, 131073, 65536, 1, 131073, 65537, -1073741823, 65536, 65538, -1073741823, 65536, 65539, 536870913, 131072 )
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Bed" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( -322, -451 )
+
+[node name="Player" parent="YSort" instance=ExtResource( 2 )]
 
 [node name="ExitArea" type="Area2D" parent="."]
 position = Vector2( 0, 124 )
